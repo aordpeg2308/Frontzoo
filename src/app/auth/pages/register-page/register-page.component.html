@@ -1,0 +1,24 @@
+<div class="card" style="border-radius: 12px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background: linear-gradient(to bottom, #4caf50, #ffffff); max-width: 400px; margin: 0 auto;">
+  <span class="text-lg mb-4" style="color: green; font-weight: bold;">Registro</span>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Email</mat-label>
+      <input type="text" matInput formControlName="username" placeholder="Nombre de usuario">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="Contraseña">
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" style="background-color: #4caf50; color: white; width: 100%; margin-top: 10px; border-radius: 8px;">
+      <mat-icon>save</mat-icon>
+      Crear cuenta
+    </button>
+  </form>
+
+  <div class="flex justify-content-end mt-5">
+    <a routerLink="/auth/login" style="color: green; font-weight: bold; text-decoration: none;">¿Ya tienes cuenta?</a>
+  </div>
+</div>

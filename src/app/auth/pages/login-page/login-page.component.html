@@ -1,0 +1,21 @@
+<div class="card" style="border-radius: 12px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background: linear-gradient(to bottom, #4caf50, #ffffff); max-width: 400px; margin: 0 auto;">
+  <span class="text-lg mb-4" style="color: green; font-weight: bold;">Login</span>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Usuario</mat-label>
+    <input [(ngModel)]="email" type="text" matInput placeholder="Nombre de usuario">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Contraseña</mat-label>
+    <input [(ngModel)]="password" type="password" matInput placeholder="Contraseña">
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" style="background-color: #4caf50; color: white; width: 100%; margin-top: 10px; border-radius: 8px;" (click)="onLogin()">
+    <mat-icon>save</mat-icon>
+    Ingresar
+  </button>
+  <div class="flex justify-content-end mt-5">
+    <a routerLink="/auth/nueva-cuenta" style="color: green; font-weight: bold">¿No tienes cuenta?</a>
+  </div>
+</div>

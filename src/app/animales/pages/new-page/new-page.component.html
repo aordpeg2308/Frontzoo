@@ -1,0 +1,88 @@
+<h3 class="text-2xl font-bold text-amber-800 mb-4">
+  {{ currentAnimal.id ? 'Editar' : 'Agregar' }} Animal
+  <small *ngIf="currentAnimal.id" class="text-amber-600"> {{ currentAnimal.nombre }}</small>
+</h3>
+
+<hr class="border-amber-400 mb-4" />
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+  <div class="bg-amber-100 text-amber-900 shadow-lg rounded-2xl p-6">
+    <form class="grid gap-4" [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+      <div class="col-span-1">
+        <label class="block text-sm font-medium text-amber-800">Nombre del Animal</label>
+        <input
+          type="text"
+          required
+          formControlName="nombre"
+          class="w-full mt-1 p-2 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"
+        />
+      </div>
+
+      <div class="col-span-1">
+        <label class="block text-sm font-medium text-amber-800">Nombre Científico</label>
+        <input
+          type="text"
+          required
+          formControlName="nombreCientifico"
+          class="w-full mt-1 p-2 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"
+        />
+      </div>
+
+      <div class="col-span-1">
+        <label class="block text-sm font-medium text-amber-800">Alimentación</label>
+        <input
+          type="text"
+          required
+          formControlName="alimentacion"
+          class="w-full mt-1 p-2 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"
+        />
+      </div>
+
+      <div class="col-span-1">
+        <label class="block text-sm font-medium text-amber-800">Origen</label>
+        <input
+          type="text"
+          required
+          formControlName="origen"
+          class="w-full mt-1 p-2 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"
+        />
+      </div>
+
+      <div class="col-span-1">
+        <label class="block text-sm font-medium text-amber-800">Foto</label>
+        <input
+          type="text"
+          formControlName="foto"
+          class="w-full mt-1 p-2 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"
+        />
+      </div>
+
+      <div class="flex justify-between mt-4">
+        <button
+           *ngIf="currentAnimal.id"
+            (click)="onDeleteAnimal()"
+              class="bg-rose-500 text-white px-4 py-2 rounded-lg hover:bg-amber-800 transition flex items-center gap-2">
+  <span class="material-icons">delete</span> Borrar
+</button>
+
+        <button
+          (click)="onSubmit()"
+          class="bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-800 transition flex items-center gap-2"
+        >
+          <span class="material-icons">save</span> Guardar
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="bg-amber-200 shadow-md rounded-2xl overflow-hidden flex items-center justify-center">
+    <img
+      [src]="currentAnimal.foto"
+      alt="imagen del animal"
+      class="w-full h-full object-cover"
+    />
+  </div>
+</div>

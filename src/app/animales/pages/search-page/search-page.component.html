@@ -1,0 +1,36 @@
+<div class="flex flex-column p-2">
+  <h1 class="text-amber-800 font-bold mb-4">Buscador Animales</h1>
+
+
+  <mat-form-field>
+    <mat-label>Filtrar por Alimentación</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControl]="alimentacionInput"
+      (input)="searchAnimal()"
+      placeholder="Ej. Carnivoro"
+    />
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Filtrar por Origen</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControl]="origenInput"
+      (input)="searchAnimal()"
+      placeholder="Ej. Asia"
+    />
+  </mat-form-field>
+
+
+  <mat-list>
+    <mat-list-item *ngFor="let animal of animals">
+      {{ animal.nombre }}
+    </mat-list-item>
+  </mat-list>
+
+  <pre>{{ selectedAnimal | json }}</pre>
+</div>

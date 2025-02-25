@@ -1,0 +1,9 @@
+<h1 class="text-2xl font-bold text-amber-800 mb-4">Listado de Animales</h1>
+<mat-divider></mat-divider>
+
+<div class="grid mb-8">
+  <div *ngFor="let animal of animales"
+    class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <animales-animal-card [animal]="animal"></animales-animal-card>
+  </div>
+</div>
