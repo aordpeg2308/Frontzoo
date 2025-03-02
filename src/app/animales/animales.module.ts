@@ -10,6 +10,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { MaterialModule } from '../material/material.module';
 import { CardComponent } from './components/card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CursivaePipe } from './pipes/cursiva.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListPageComponent,
     NewPageComponent,
     SearchPageComponent,
-    CardComponent
+    CardComponent,
+    CursivaePipe
   ],
   imports: [
     CommonModule,

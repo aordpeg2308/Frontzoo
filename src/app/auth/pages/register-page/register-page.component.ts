@@ -27,7 +27,7 @@ export class RegisterPageComponent {
       const { username, password } = this.registerForm.value;
       this.authService.register(username, password).subscribe(response => {
         console.log('Usuario registrado con éxito');
-        this.router.navigate(['/auth/login']);  
+        this.router.navigate(['/auth/login']);
       });
     }
   }
