@@ -23,7 +23,7 @@ export class AnimalesService {
   }
 
   getSuggestions(alimentacion: string, origen: string): Observable<Animal[]> {
-    const url = `http://localhost:3000/animales?q=${alimentacion}&alimentacion=${alimentacion}&origen=${origen}&_limit=6`;
+    const url = `https://backendzoo.onrender.com/animales?q=${alimentacion}&alimentacion=${alimentacion}&origen=${origen}&_limit=6`;
 
 
     return this.httpClient.get<{ status: string, data: Animal[] }>(url)
