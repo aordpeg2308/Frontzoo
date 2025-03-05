@@ -8,7 +8,7 @@ export class AuthService {
   private user?: User;
 
   private users: User[] = [
-    { id: 1, email: 'churro@gmail.com', password: '1234' }
+    { id: 1, email: 'meta', password: 'meta' }
   ];
 
   constructor() { }
