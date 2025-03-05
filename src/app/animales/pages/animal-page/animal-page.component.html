@@ -11,7 +11,7 @@
       <div class="rounded-lg shadow-lg bg-gradient-to-r from-amber-800 to-amber-900 text-amber-50 overflow-hidden">
         <div class="p-4 text-center">
           <h2 class="font-serif text-2xl text-amber-100">{{ animal.nombre }}</h2>
-          <p class="font-sans text-lg text-amber-200">({{ animal.nombreCientifico }})</p>
+          <p class="font-sans text-lg text-amber-200" [innerHTML]="animal.nombreCientifico | cursiva"> </p>
         </div>
 
         <div class="relative h-96">
